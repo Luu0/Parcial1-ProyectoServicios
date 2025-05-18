@@ -1,0 +1,328 @@
+:root {
+    --bcolor: #300000;
+    --bcolor2: #181818;
+    --textcolor1: #f0f0f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: var(--bcolor);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Arial, sans-serif;
+}
+
+header {
+    background: radial-gradient(circle, rgba(218, 216, 216, 1) 44%, rgba(189, 189, 189, 1) 74%);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.titulo-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+}
+
+.icon-sword,
+.icon-cart {
+    width: 32px;
+    height: 32px;
+}
+
+.carrito {
+    position: relative;
+    right: 20px;
+    top: 20px;
+}
+
+.icon-cart {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-cart:hover {
+    transform: scale(1.2);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3em;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+.hero {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.9;
+    mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+}
+
+.descripcion {
+    margin-top: -10px;
+    padding: 20px;
+    background-color: var(--bcolor);
+    font-size: 1.5em;
+    color: var(--textcolor1);
+}
+
+.card-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px 20px;
+    background-color: var(--bcolor2);
+    position: relative;
+    margin: 100px 0;
+}
+
+.mg-1 {
+    margin-top: 0;
+}
+
+.mg-2 {
+    margin-bottom: 0;
+}
+
+.section-title {
+    width: 100%;
+    text-align: center;
+    font-size: 36px;
+    color: var(--textcolor1);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 30px;
+}
+
+.carousel-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+    scroll-snap-type: x mandatory;
+    padding: 20px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.carousel-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card {
+    position: relative;
+    width: 250px;
+    height: 480px;
+    margin: 20px;
+    background: #333;
+    border-radius: 20px;
+    overflow: hidden;
+    scroll-snap-align: center;
+    flex: 0 0 auto;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    width: 100%;
+    height: 100%;
+    background: darkred;
+    transform: skewY(345deg);
+    transition: 0.5s;
+}
+
+.card:hover::before {
+    top: -70%;
+    transform: skewY(390deg);
+}
+
+.card-img {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    padding-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.card-content {
+    position: relative;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-content h3,
+.card-price {
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--textcolor1);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.card-price {
+    font-weight: 800;
+}
+
+.card-buy {
+    position: relative;
+    top: 100px;
+    opacity: 0;
+    margin-top: 15px;
+    padding: 10px 30px;
+    background: #820F00;
+    color: #fff;
+    border-radius: 30px;
+    text-decoration: none;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.card:hover .card-content .card-buy {
+    top: 0;
+    opacity: 1;
+}
+
+.footer {
+    position: relative;
+    background: radial-gradient(circle, rgba(189, 19, 19, 1) 46%, rgba(130, 15, 0, 1) 74%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100px;
+    padding: 20px 50px;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.icon-elem {
+    list-style: none;
+}
+
+.icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 10px;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.icon:hover {
+    transform: translateY(-10px);
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 10px 0;
+}
+
+.menu-elem {
+    list-style: none;
+}
+
+.menu-icon {
+    color: var(--textcolor1);
+    font-size: 20px;
+    text-decoration: none;
+    margin: 5px 10px;
+    display: inline-block;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.menu-icon:hover {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .card-container {
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 auto;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    .header-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .carrito {
+        position: static;
+        margin-top: 10px;
+    }
+
+    .nav-links {
+        gap: 20px;
+    }
+}

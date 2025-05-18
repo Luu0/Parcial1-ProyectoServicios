@@ -1,0 +1,225 @@
+:root {
+    --bcolor: #171717;
+    --textcolor1: #f0f0f0;
+    --primary: crimson;
+    --primary-dark: rgb(145, 13, 39);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(../img/contacctbg.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+
+header {
+    background: radial-gradient(circle, #dad8d8 44%, #bdbdbd 74%);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: Cambria, Georgia, Times, 'Times New Roman', serif;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.titulo-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.titulo {
+    font-size: 2em;
+    font-weight: bold;
+    color: red;
+}
+
+.icon-sword {
+    width: 32px;
+    height: 32px;
+}
+
+.carrito {
+    position: relative;
+    right: 20px;
+    top: 20px;
+}
+
+.icon-cart {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.icon-cart:hover {
+    transform: scale(1.2);
+}
+
+
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.3em;
+    transition: color 0.3s, text-decoration 0.3s;
+}
+
+.nav-links a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+
+.test {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px;
+    gap: 10px;
+    width: 1000px;
+}
+
+@media screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        flex-direction: column;
+        display: flex;
+        gap: 20px;
+    }
+
+    .box-info {
+        gap: 15px;
+    }
+}
+
+
+.box-info {
+    color: var(--textcolor1);
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.box-info h1 {
+    text-align: left;
+    letter-spacing: 5px;
+}
+
+.data {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.data p {
+    font-size: 1.2rem;
+}
+
+.data-brands {
+    width: 25px;
+    height: auto;
+}
+
+.links {
+    display: flex;
+    gap: 15px;
+}
+
+.links a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.links a img:hover {
+    transform: scale(1.1);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+}
+
+.input-box {
+    position: relative;
+}
+
+.input-box input,
+.input-box textarea {
+    width: 100%;
+    padding: 0 10px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.1);
+    border: 3px solid transparent;
+    letter-spacing: 1px;
+    transition: border-bottom 0.3s, color 0.3s;
+    color: var(--textcolor1);
+}
+
+.input-box input {
+    height: 40px;
+}
+
+.input-box textarea {
+    height: 130px;
+    margin: 15px 0;
+    padding-top: 10px;
+}
+
+.input-box input:focus,
+.input-box textarea:focus {
+    border-bottom: 3px solid var(--primary);
+}
+
+.input-box input:focus::placeholder,
+.input-box textarea:focus::placeholder {
+    color: transparent;
+}
+
+
+.btn-form {
+    background-color: var(--primary);
+    color: var(--textcolor1);
+    border: none;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-form:hover {
+    background-color: var(--primary-dark);
+}
